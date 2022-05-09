@@ -6,8 +6,8 @@ import './App.css';
 
 const App = () => {
   const [courseGoals, setCourseGoals] = useState([
-    { text: 'Do all exercises!', id: 'g1' },
-    { text: 'Finish the course!', id: 'g2' }
+    { text: 'Set fantastic goals for yourself', id: 'g1' },
+    { text: 'Keep this tab open, or your goals will vanish', id: 'g2' }
   ]);
 
   const addGoalHandler = enteredText => {
@@ -26,7 +26,7 @@ const App = () => {
   };
 
   let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+    <p style={{ textAlign: 'center' }}>Well done! Now you can create new ones!</p>
   );
 
   if (courseGoals.length > 0) {
@@ -37,6 +37,12 @@ const App = () => {
 
   return (
     <div>
+      <section id='header-section'>
+        <h1 id='header'>Goal tracker</h1>
+        <p id='presentation'>Insert your goals for today and click on them as you accomplish each one!</p>
+      </section>
+
+
       <section id="goal-form">
         <CourseInput onAddGoal={addGoalHandler} />
       </section>

@@ -1,14 +1,25 @@
 import React from 'react';
+
+
+// =====================================
+// USING STYLED COMPONENTS
+// =====================================
+
+// Styled Components are functional (just uncomment the code below)
+// Also introduced styling with modules
+
 import styled from 'styled-components';
 
 const Button = styled.button`
 
+  width: 100%;
+
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #8b005d;
+  border: none;
+  border-radius: 5px;
   color: white;
-  background: #8b005d;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+  background: #4a4e69;
   cursor: pointer;
 
   &:focus {
@@ -17,16 +28,26 @@ const Button = styled.button`
 
   &:hover,
   &:active {
-    background: #ac0e77;
+    background: #22223b;
     border-color: #ac0e77;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
   }
-  
+
+  @media (min-width: 750px) {
+    width: auto;
+  }
+
 `;
 
-// Button = props => {
+
+// =====================================
+// USING MODULES
+// =====================================
+// import styles from './Button.module.css';
+
+// let Button = props => {
 //   return (
-//     <button type={props.type} className="button" onClick={props.onClick}>
+//     <button type={props.type} className={styles.button} onClick={props.onClick}>
 //       {props.children}
 //     </button>
 //   );
